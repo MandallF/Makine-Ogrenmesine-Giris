@@ -4,9 +4,11 @@ Bu proje, oyunlara ait bir veri setinin ilk 10.000 satırı üzerinde gözetimli
 Veri setinde çeşitli oyunlara ait satış verileri, meta skorlar, kullanıcı puanları ve farklı kategorik bilgileri içeren çok boyutlu bir yapı bulunmaktadır. Projenin temel amacı, bu çok boyutlu verinin uygun şekilde ön işlenerek makine öğrenmesi modellerine verilmesi ve modellerin başarılarının karşılaştırılmasıdır.
 
 ## Proje Yapısı
-`Oyun Veri Setinin İncelenmesi.ipynb` Tüm veri analizini, model eğitimini ve görselleştirmeleri içeren Jupyter Notebook
-`all_games.csv`  Çalışmada kullanılan oyun veri seti
-`README.md`  Projenin açıklama dosyası
+Oyun Veri Setinin İncelenmesi.ipynb, Tüm veri analizini, model eğitimini ve görselleştirmeleri içeren Jupyter Notebook
+
+all_games.csv,  Çalışmada kullanılan oyun veri seti
+
+README.md,  Projenin açıklama dosyası
 
 ##  Amaç
 
