@@ -53,10 +53,10 @@ Proje kapsamında şu adımlar uygulanmıştır:
 - **R² Score**, modelin doğruluk oranı olarak düşünülebilir
 
 ###  Sınıflandırma:
-- Accuracy
-- Precision
-- Recall
-- F1-score 
+- Accuracy, modelin tüm tahminlerinin ne kadarının doğru olduğunu gösterir.
+- Precision, modelin kesinlik değerini gösterir.
+- Recall, bulduğu sonuç ne kadar doğru olduğunu gösterir. Sonuçların ne kadarı doğru buldu diye veya gözden kaçırdı mı anlamında düşünülebilir.
+- F1-score, modelin bulduğu sonuç ne kadar kesin ve ne kadarını buldu, gözden kaçırdı mı metriğini tutan değer.  
 
 ##  Görselleştirmeler
 
