@@ -90,12 +90,10 @@ Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevl
 
 ##  Kullanılan Kütüphaneler
 
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
-- warnings
+- pandas, genel olarak veriyi işleme aşamasında kullanıldı.
+- numpy, genel olarak veriyi işleme aşamasında kullanıldı.
+- scikit-learn, veriyi train ve test verisi olarak ayırıp modeli eğitmek amacıyla kullanıldı.
+- matplotlib, grafikleri çizmek amacıyla yararlanıldı.
 
 ---
 Çalıştırma
