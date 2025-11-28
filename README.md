@@ -1,43 +1,33 @@
 # Oyun Veri Seti Üzerinde Gözetimli Öğrenme Analizi:  
-Bu proje, oyunlara ait bir veri setinin ilk 10.000 satırı üzerinde gözetimli öğrenme yöntemlerini uygulayarak **regresyon** ve **sınıflandırma** modelleri ile performans karşılaştırması yapılmasını amaçlamaktadır.
+Bu proje, oyunlara ait bir veri setinin ilk 10.000 satırı üzerinde gözetimli öğrenme yöntemlerini uygulayarak regresyon ve sınıflandırma modelleri ile performans karşılaştırması yapılmasını amaçlamaktadır.
 
 Veri setinde çeşitli oyunlara ait satış verileri, meta skorlar, kullanıcı puanları ve farklı kategorik bilgileri içeren çok boyutlu bir yapı bulunmaktadır. Projenin temel amacı, bu çok boyutlu verinin uygun şekilde ön işlenerek makine öğrenmesi modellerine verilmesi ve modellerin başarılarının karşılaştırılmasıdır.
 
----
-
 ## Proje Yapısı
-| `Oyun Veri Setinin İncelenmesi.ipynb` | Tüm veri analizini, model eğitimini ve görselleştirmeleri içeren Jupyter Notebook |
-| `all_games.csv` | Çalışmada kullanılan oyun veri seti |
-| `README.md` | Projenin açıklama dosyası |
-
----
+`Oyun Veri Setinin İncelenmesi.ipynb` Tüm veri analizini, model eğitimini ve görselleştirmeleri içeren Jupyter Notebook
+`all_games.csv`  Çalışmada kullanılan oyun veri seti
+`README.md`  Projenin açıklama dosyası
 
 ##  Amaç
 
-1. Veri setindeki değişkenleri analiz etmek  
-2. Eksik değerleri ve uygun olmayan sütunları temizlemek  
-3. Sayısal ve kategorik değişkenlere uygun ön işleme adımları uygulamak  
-4. Hem regresyon hem sınıflandırma için hedef değişken belirlemek  
-5. Birden fazla makine öğrenmesi modeli eğiterek performanslarını karşılaştırmak  
-6. Sonuçları grafiklerle ve metriklerle değerlendirmek
-
----
+1. Veri setindeki değişkenleri analiz etmek,  
+2. Eksik değerleri ve uygun olmayan sütunları temizlemek,  
+3. Sayısal ve kategorik değişkenlere uygun ön işleme adımları uygulamak,  
+4. Hem regresyon hem sınıflandırma için hedef değişken belirlemek,  
+5. Birden fazla makine öğrenmesi modeli eğiterek performanslarını karşılaştırmak,  
+6. Sonuçları grafiklerle ve metriklerle değerlendirmek.
 
 ## Veri Ön İşleme
 
 Proje kapsamında şu adımlar uygulanmıştır:
 
-- **İlk 10.000 satırın seçilmesi**
-- Gereksiz sütunların kaldırılması (`name`, `id`, `description` vb.)
-- Uzun metin içeren sütunların ayıklanması
-- Eksik değerlerin doldurulması  
-  - Sayısal → median  
-  - Kategorik → most_frequent  
-- Kategorik verilerin **One-Hot Encoding**
-- Sayısal verilerin **Standard Scaling**
-- Tüm işlemlerin bir **Pipeline** içinde yapılması
-
----
+- İlk 10.000 satırı seçtim çünkü veriyi işlemek kullandığım sistemden ötürü çok uzun vakit alıyordu.
+- Gereksiz sütunların kaldırılması (daha çok modeli yoracak, işlemesi zor string veriler) (`name`, `id`, `description` vb.).
+- Uzun metin içeren sütunları ayıkladım.
+- Seçtiğim sütunlardaki eksik değerleri doldurdum.
+- Kategorik verilerin One-Hot Encoding yapılması
+- Sayısal verilerin Standard Scaling yapılması
+- Tüm işlemlerin bir Pipeline içinde yaptım. Bu sayede farklı modelleri eğitmek amacıyla bunu kullanabilirim.
 
 ### Kullanılan Modeller
 
@@ -56,48 +46,43 @@ Proje kapsamında şu adımlar uygulanmıştır:
 - KNN Classifier
 - Naive Bayes
 
----
-
 ##  Model Değerlendirme Metrikleri
 
 ###  Regresyon:
-- **MSE** (Mean Squared Error)
-- **R² Score**
+- **MSE** (Mean Squared Error), modelin hata oranı olarak düşünülebilir.
+- **R² Score**, modelin doğruluk oranı olarak düşünülebilir
 
 ###  Sınıflandırma:
-- **Accuracy**
-- **Precision**
-- **Recall**
-- **F1-score**
-
----
+- Accuracy
+- Precision
+- Recall
+- F1-score 
 
 ##  Görselleştirmeler
 
 Notebook içinde şu grafikler üretilmiştir:
 
 - Hedef değişkenin histogram dağılımı
-- Sınıflandırma modellerinin karşılaştırmalı doğruluk grafiği
+- Sınıflandırma modellerinin karşılaştırmalı doğruluk grafiği, modellerin karşılaştırılması.
 
 Bu görseller modellerin performansını daha iyi anlamak için kullanılmıştır.
 
----
 
 ##  Sonuçlar
 
 Analiz sonucunda:
 
-### ✔️ En iyi regresyon modeli: **Random Forest Regressor**
-- En düşük MSE değerini üretmiştir  
-- Yüksek R² ile veri yapısını en iyi modelleyen algoritmadır  
-- Karmaşık ve çok boyutlu veri üzerinde çok başarılıdır  
+### ✔️ En iyi regresyon modeli: Random Forest Regressor olarak bulundu
+- En düşük MSE değerini yani hatayı üretmiştir  
+- Yüksek R² yani doğruluk ile veri yapısını en iyi modelleyen algoritmadır  
+- Karmaşık ve çok boyutlu veri üzerinde çok başarılıdır. Çünkü alt ağaçları birleştirerek çalışıyor. Bu sayede aşırı öğrenmeye de kaymıyor.  
 
-### ✔️ En iyi sınıflandırma modeli: **Random Forest Classifier**
+### ✔️ En iyi sınıflandırma modeli: Random Forest Classifier
 - En yüksek accuracy ve F1-score değerlerini elde etmiştir  
 - Gürültülü ve karmaşık veri yapısını etkin biçimde işlemiştir  
-- Diğer modellere göre daha stabil sonuçlar vermiştir  
+- Diğer modellere göre daha stabil sonuçlar vermiştir, aşırı öğrenmeye kaymamıştır.  
 
-Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevlerinde **Random Forest tabanlı yöntemlerin en uygun yaklaşım olduğu** belirlenmiştir.
+Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevlerinde Random Forest tabanlı yöntemlerin en uygun yaklaşım olduğu belirlenmiştir.
 
 ---
 
@@ -107,17 +92,15 @@ Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevl
 - numpy
 - scikit-learn
 - matplotlib
-- seaborn (opsiyonel)
+- seaborn
 - warnings
 
 ---
-
-## 📥 Çalıştırma
-
+Çalıştırma
 Google Colab ile çalışmak isterseniz CSV dosyasını yüklemeniz yeterlidir.
 
-📄 Lisans
+Lisans
 Bu proje eğitim amaçlı hazırlanmıştır. Her türlü kullanım serbesttir.
 
-✉️ İletişim
+İletişim
 Bursa Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü 22360859047 numaralı 3. Sınıf Öğrencisi Kubilay İnanç
