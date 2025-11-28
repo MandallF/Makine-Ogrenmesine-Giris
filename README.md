@@ -34,19 +34,19 @@ Proje kapsamında şu adımlar uygulanmıştır:
 ### Kullanılan Modeller
 
 ### Regresyon Modelleri
-- Linear Regression
-- Decision Tree Regressor
-- Random Forest Regressor
-- Support Vector Regressor (SVR)
-- KNN Regressor
+- Linear Regression, Veri ile hedef arasında doğrusal (lineer) bir ilişki kurarak tahmin yapan basit regresyon modelidir.
+- Decision Tree Regressor, Karar kurallarına dayalı dallanma yapısı oluşturarak hedef değeri tahmin eden ağaç tabanlı regresyon modelidir.
+- Random Forest Regressor, Birden fazla karar ağacının ortalama tahminini kullanarak daha istikrarlı ve güçlü sonuç üreten topluluk regresyon yöntemidir.
+- Support Vector Regressor (SVR), Verileri belirli bir tolerans aralığında en iyi şekilde ayıran hiper düzlemi bulup tahmin yapan margin-tabanlı regresyon modelidir.
+- KNN Regressor, Hedef değeri, en yakın komşu verilerin ortalamasına bakarak hesaplayan örnek-tabanlı regresyon yöntemidir.
 
 ###  Sınıflandırma Modelleri
-- Logistic Regression
-- Decision Tree Classifier
-- Random Forest Classifier
-- Support Vector Machine (SVM)
-- KNN Classifier
-- Naive Bayes
+- Logistic Regression, Verinin belirli bir sınıfa ait olma olasılığını hesaplayan istatistiksel sınıflandırma modelidir.
+- Decision Tree Classifier, Veriyi “evet/hayır” sorularıyla dallara ayırarak sınıf etiketi tahmini yapan ağaç tabanlı modeldir.
+- Random Forest Classifier, Birçok karar ağacının oylamasıyla daha kararlı sınıf tahmini yapan topluluk sınıflandırma yöntemidir.
+- Support Vector Machine (SVM), Sınıfları en iyi ayıran sınır (hiper düzlem) oluşturarak maksimum ayrım sağlayan sınıflandırma algoritmasıdır.
+- KNN Classifier, Bir örneğin sınıfını, en yakın komşularının çoğunluğuna bakarak belirleyen basit ve etkili sınıflandırma yöntemidir.
+- Naive Bayes, Özelliklerin birbirinden bağımsız olduğunu varsayarak olasılık temelli sınıf tahmini yapan hızlı ve hafif modeldir.
 
 ##  Model Değerlendirme Metrikleri
 
