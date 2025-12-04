@@ -97,6 +97,8 @@ Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevl
 
 - <img width="491" height="752" alt="image" src="https://github.com/user-attachments/assets/078b29d9-7d06-4b62-92de-a7b8be247ab4" />
 
+Detaylı grafik bilgileri proje kısmında belirtilmiştir.
+
 
 ---
 Çalıştırma
