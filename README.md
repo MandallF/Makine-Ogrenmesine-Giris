@@ -95,6 +95,9 @@ Sonuç olarak, bu veri seti üzerinde hem regresyon hem sınıflandırma görevl
 - scikit-learn, veriyi train ve test verisi olarak ayırıp modeli eğitmek amacıyla kullanıldı.
 - matplotlib, grafikleri çizmek amacıyla yararlanıldı.
 
+- <img width="491" height="752" alt="image" src="https://github.com/user-attachments/assets/078b29d9-7d06-4b62-92de-a7b8be247ab4" />
+
+
 ---
 Çalıştırma
 Google Colab ile çalışmak isterseniz CSV dosyasını yüklemeniz yeterlidir.
